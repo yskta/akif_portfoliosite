@@ -14,10 +14,10 @@ const achievements = [
       { text: 'View Certificate', url: 'https://coursera.org/share/ff0e588da1bce9ed51998e5b68f1f75d' }
     ],
     techStack: [
-      { name: 'Python', icon: '🐍', color: 'bg-blue-100 text-blue-800' },
-      { name: 'TensorFlow', icon: '🧠', color: 'bg-orange-100 text-orange-800' },
-      { name: 'NumPy', icon: '🔢', color: 'bg-green-100 text-green-800' },
-      { name: 'Scikit-learn', icon: '📊', color: 'bg-purple-100 text-purple-800' }
+      { name: 'Python', icon: '🐍', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' },
+      { name: 'TensorFlow', icon: '🧠', color: 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200' },
+      { name: 'NumPy', icon: '🔢', color: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' },
+      { name: 'Scikit-learn', icon: '📊', color: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200' }
     ],
     delay: 0
   },
@@ -31,12 +31,12 @@ const achievements = [
       { text: 'Course Website', url: 'https://cs50.harvard.edu/' }
     ],
     techStack: [
-      { name: 'C', icon: '⚡', color: 'bg-gray-100 text-gray-800' },
-      { name: 'Python', icon: '🐍', color: 'bg-blue-100 text-blue-800' },
-      { name: 'SQL', icon: '🗄️', color: 'bg-yellow-100 text-yellow-800' },
-      { name: 'Flask', icon: '🌶️', color: 'bg-red-100 text-red-800' },
-      { name: 'JavaScript', icon: '📝', color: 'bg-yellow-100 text-yellow-800' },
-      { name: 'HTML/CSS', icon: '🎨', color: 'bg-pink-100 text-pink-800' }
+      { name: 'C', icon: '⚡', color: 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200' },
+      { name: 'Python', icon: '🐍', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' },
+      { name: 'SQL', icon: '🗄️', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200' },
+      { name: 'Flask', icon: '🌶️', color: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' },
+      { name: 'JavaScript', icon: '📝', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200' },
+      { name: 'HTML/CSS', icon: '🎨', color: 'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200' }
     ],
     delay: 300
   },
@@ -49,11 +49,11 @@ const achievements = [
       { text: 'View Certificate', url: 'https://coursera.org/share/860f8fe005240885ac71b659416af184' }
     ],
     techStack: [
-      { name: 'Python', icon: '🐍', color: 'bg-blue-100 text-blue-800' },
-      { name: 'Git', icon: '📦', color: 'bg-orange-100 text-orange-800' },
-      { name: 'Bash', icon: '💻', color: 'bg-green-100 text-green-800' },
-      { name: 'Puppet', icon: '🎭', color: 'bg-purple-100 text-purple-800' },
-      { name: 'Cloud', icon: '☁️', color: 'bg-sky-100 text-sky-800' }
+      { name: 'Python', icon: '🐍', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' },
+      { name: 'Git', icon: '📦', color: 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200' },
+      { name: 'Bash', icon: '💻', color: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' },
+      { name: 'Puppet', icon: '🎭', color: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200' },
+      { name: 'Cloud', icon: '☁️', color: 'bg-sky-100 text-sky-800 dark:bg-sky-900 dark:text-sky-200' }
     ],
     delay: 600
   }
@@ -67,7 +67,7 @@ const Achievements = () => {
       <section id="achievements" className="min-h-screen py-20 px-4 lg:px-8">
         <div className="container mx-auto">
           <div className="mb-12" data-aos="fade-up">
-            <h6 className="text-blue-500 text-sm uppercase tracking-wider mb-2">Check out my</h6>
+            <h6 className="text-blue-500 dark:text-blue-400 text-sm uppercase tracking-wider mb-2">Check out my</h6>
             <h1 className="text-4xl md:text-5xl font-bold">ACHIEVEMENTS</h1>
           </div>
 
@@ -75,7 +75,7 @@ const Achievements = () => {
             {achievements.map((achievement, index) => (
               <div 
                 key={index}
-                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all cursor-pointer hover:scale-[1.02]"
+                className="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all cursor-pointer hover:scale-[1.02]"
                 data-aos="fade-up"
                 data-aos-delay={achievement.delay}
                 onClick={() => setSelectedAchievement(achievement)}
@@ -90,8 +90,8 @@ const Achievements = () => {
                 </div>
                 <div className="p-6">
                   <h4 className="text-xl font-semibold mb-3">{achievement.title}</h4>
-                  <p className="text-gray-600 mb-4 text-sm line-clamp-3">{achievement.description}</p>
-                  <span className="text-blue-500 hover:text-blue-600 transition-colors font-medium inline-flex items-center">
+                  <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm line-clamp-3">{achievement.description}</p>
+                  <span className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors font-medium inline-flex items-center">
                     View details
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

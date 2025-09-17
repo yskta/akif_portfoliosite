@@ -39,34 +39,34 @@ const Modal = ({ isOpen, onClose, title, description, links, techStack }: ModalP
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-opacity-20 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm"
       onClick={onClose}
     >
       <div 
-        className="bg-white rounded-2xl shadow-lg max-w-lg w-full p-8 transform transition-all"
+        className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg max-w-lg w-full p-8 transform transition-all"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-start mb-4">
           <h2 className="text-2xl font-bold">{title}</h2>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 transition-colors"
+            className="text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 transition-colors"
           >
             ✕
           </button>
         </div>
         
-        <p className="text-gray-600 mb-6">{description}</p>
+        <p className="text-gray-600 dark:text-gray-400 mb-6">{description}</p>
         
         {techStack && techStack.length > 0 && (
           <div className="mb-6">
-            <h3 className="text-sm font-semibold text-gray-700 mb-3">Tech Stack</h3>
+            <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Tech Stack</h3>
             <div className="flex flex-wrap gap-2">
               {techStack.map((tech, index) => (
                 <span
                   key={index}
                   className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
-                    tech.color || 'bg-gray-100 text-gray-800'
+                    tech.color || 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200'
                   }`}
                 >
                   {tech.icon && (
@@ -86,7 +86,7 @@ const Modal = ({ isOpen, onClose, title, description, links, techStack }: ModalP
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/50 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/70 transition-colors"
             >
               {link.text}
               <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

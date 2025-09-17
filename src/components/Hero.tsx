@@ -19,25 +19,25 @@ const Hero = () => {
             <Link 
               href="https://www.rtu.lv/en" 
               target="_blank" 
-              className="text-blue-500 hover:text-blue-600 transition-colors"
+              className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
             >
               RIGA TECHNICAL UNIVERSITY
             </Link>
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 mb-8" data-aos="fade-up" data-aos-delay="300">
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="300">
             Hi! I am Mehmet Akif Ufacik, a software enthusiast.
           </p>
           <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="600">
             <a 
               href="#contact" 
-              className="inline-block px-6 py-3 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors text-center"
+              className="inline-block px-6 py-3 bg-blue-500 text-white rounded hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 transition-colors text-center"
             >
               Get in Touch
             </a>
             <Link 
               href="https://www.linkedin.com/in/mehmet-akif-ufacik-216807234/" 
               target="_blank"
-              className="inline-block px-6 py-3 text-blue-500 hover:text-blue-600 transition-colors text-center"
+              className="inline-block px-6 py-3 text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors text-center"
             >
               Let's connect on LinkedIn
             </Link>

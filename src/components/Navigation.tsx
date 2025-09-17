@@ -3,9 +3,11 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useTheme } from '@/contexts/ThemeContext'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const { theme, toggleTheme } = useTheme()
 
   const navItems = [
     { href: '#home', label: 'Home' },
@@ -23,7 +25,7 @@ const Navigation = () => {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-gray-900 text-white z-50 lg:fixed lg:left-0 lg:top-0 lg:h-full lg:w-64 lg:flex lg:flex-col">
+    <nav className="fixed top-0 left-0 right-0 bg-gray-900 dark:bg-gray-950 text-white z-50 lg:fixed lg:left-0 lg:top-0 lg:h-full lg:w-64 lg:flex lg:flex-col">
       <div className="container mx-auto px-4 lg:px-0 lg:h-full lg:flex lg:flex-col">
         <div className="flex justify-between items-center h-16 lg:h-auto lg:flex-col lg:justify-start lg:pt-12">
           <Link href="#" className="flex items-center lg:flex-col lg:mb-8">
@@ -55,13 +57,29 @@ const Navigation = () => {
                 <a
                   href={item.href}
                   onClick={(e) => scrollToSection(e, item.href)}
-                  className="block px-4 py-2 hover:bg-gray-800 transition-colors lg:text-center"
+                  className="block px-4 py-2 hover:bg-gray-800 dark:hover:bg-gray-900 transition-colors lg:text-center"
                 >
                   {item.label}
                 </a>
               </li>
             ))}
           </ul>
+          
+          <button
+            onClick={toggleTheme}
+            className="mx-4 mt-4 p-2 rounded-lg bg-gray-800 dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors flex items-center justify-center"
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? (
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+              </svg>
+            ) : (
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            )}
+          </button>
         </div>
       </div>
     </nav>

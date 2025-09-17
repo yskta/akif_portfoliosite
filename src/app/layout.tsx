@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import AOSInit from "@/components/AOSInit";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,13 +21,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} antialiased`}>
-        <AOSInit />
-        <Navigation />
-        <div className="lg:ml-64">
-          {children}
-        </div>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body className={`${inter.className} antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100`}>
+        <ThemeProvider>
+          <AOSInit />
+          <Navigation />
+          <div className="lg:ml-64">
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

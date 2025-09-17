@@ -23,10 +23,10 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="min-h-screen py-20 px-4 lg:px-8 bg-gray-50">
+    <section id="contact" className="min-h-screen py-20 px-4 lg:px-8 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto">
         <div className="text-center mb-12" data-aos="fade-up">
-          <h6 className="text-blue-500 text-sm uppercase tracking-wider mb-2">CONTACT</h6>
+          <h6 className="text-blue-500 dark:text-blue-400 text-sm uppercase tracking-wider mb-2">CONTACT</h6>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Would you like to work together? Let's talk!
           </h1>
@@ -42,7 +42,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Enter your name"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-500 rounded-lg focus:outline-none focus:border-blue-500 dark:focus:border-blue-400 transition-colors"
                   required
                 />
               </div>
@@ -53,7 +53,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Enter your email"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-500 rounded-lg focus:outline-none focus:border-blue-500 dark:focus:border-blue-400 transition-colors"
                   required
                 />
               </div>
@@ -65,14 +65,14 @@ const Contact = () => {
                 onChange={handleChange}
                 rows={4}
                 placeholder="Enter your message"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-500 rounded-lg focus:outline-none focus:border-blue-500 dark:focus:border-blue-400 transition-colors resize-none"
                 required
               />
             </div>
             <div>
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-medium"
+                className="w-full px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 transition-colors font-medium"
               >
                 Contact me
               </button>
