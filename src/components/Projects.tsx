@@ -1,5 +1,9 @@
+'use client'
+
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import Modal from './Modal'
 
 const projects = [
   {
@@ -33,64 +37,56 @@ const projects = [
 ]
 
 const Projects = () => {
-  return (
-    <section id="projects" className="min-h-screen py-20 px-4 lg:px-8 bg-gray-50">
-      <div className="container mx-auto">
-        <div className="mb-12" data-aos="fade-up">
-          <h6 className="text-blue-500 text-sm uppercase tracking-wider mb-2">Browse my</h6>
-          <h1 className="text-4xl md:text-5xl font-bold">PROJECTS</h1>
-        </div>
+  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null)
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div 
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-              data-aos="fade-up"
-              data-aos-delay={project.delay}
-            >
-              <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-4">
-                <Image 
-                  src={project.icon}
-                  alt={project.title}
-                  width={40}
-                  height={40}
-                />
+  return (
+    <>
+      <section id="projects" className="min-h-screen py-20 px-4 lg:px-8 bg-gray-50">
+        <div className="container mx-auto">
+          <div className="mb-12" data-aos="fade-up">
+            <h6 className="text-blue-500 text-sm uppercase tracking-wider mb-2">Browse my</h6>
+            <h1 className="text-4xl md:text-5xl font-bold">PROJECTS</h1>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <div 
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all cursor-pointer hover:scale-[1.02]"
+                data-aos="fade-up"
+                data-aos-delay={project.delay}
+                onClick={() => setSelectedProject(project)}
+              >
+                <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-4">
+                  <Image 
+                    src={project.icon}
+                    alt={project.title}
+                    width={40}
+                    height={40}
+                  />
+                </div>
+                <h5 className="text-xl font-semibold mb-3">{project.title}</h5>
+                <p className="text-gray-600 mb-4 line-clamp-3">{project.description}</p>
+                <span className="text-blue-500 hover:text-blue-600 transition-colors font-medium inline-flex items-center">
+                  View details
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
               </div>
-              <h5 className="text-xl font-semibold mb-3">{project.title}</h5>
-              <p className="text-gray-600 mb-4">
-                {project.description.split('explanation video').map((part, i) => (
-                  i === 0 ? part : (
-                    <span key={i}>
-                      <Link 
-                        href={project.links[0].url}
-                        target="_blank"
-                        className="text-blue-500 hover:text-blue-600 transition-colors"
-                      >
-                        explanation video
-                      </Link>
-                      {part}
-                    </span>
-                  )
-                ))}
-              </p>
-              {project.links.map((link, linkIndex) => (
-                link.text !== 'explanation video' && (
-                  <Link 
-                    key={linkIndex}
-                    href={link.url}
-                    target="_blank"
-                    className="text-blue-500 hover:text-blue-600 transition-colors font-medium"
-                  >
-                    {link.text} →
-                  </Link>
-                )
-              ))}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <Modal
+        isOpen={!!selectedProject}
+        onClose={() => setSelectedProject(null)}
+        title={selectedProject?.title || ''}
+        description={selectedProject?.description || ''}
+        links={selectedProject?.links || []}
+      />
+    </>
   )
 }
 
