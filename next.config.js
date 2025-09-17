@@ -1,12 +1,14 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production'
+
 const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
   },
   // GitHub Pagesのベースパス設定
-  basePath: '/akif_portfoliosite',
-  assetPrefix: '/akif_portfoliosite',
+  basePath: isProd ? '/akif_portfoliosite' : '',
+  assetPrefix: isProd ? '/akif_portfoliosite' : '',
   trailingSlash: true,
 }
 
