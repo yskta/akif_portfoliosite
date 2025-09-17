@@ -28,7 +28,7 @@ const Contact = () => {
         <div className="text-center mb-12" data-aos="fade-up">
           <h6 className="text-blue-500 dark:text-blue-400 text-sm uppercase tracking-wider mb-2">CONTACT</h6>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Would you like to work together? Let's talk!
+            Would you like to work together? Let&apos;s talk!
           </h1>
         </div>
 
