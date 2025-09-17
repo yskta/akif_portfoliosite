@@ -15,7 +15,7 @@ const Hero = () => {
         
         <div className="max-w-4xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" data-aos="fade-up">
-            I'M A STUDENT AT<br />
+            I&apos;M A STUDENT AT<br />
             <Link 
               href="https://www.rtu.lv/en" 
               target="_blank" 
@@ -39,7 +39,7 @@ const Hero = () => {
               target="_blank"
               className="inline-block px-6 py-3 text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors text-center"
             >
-              Let's connect on LinkedIn
+              Let&apos;s connect on LinkedIn
             </Link>
           </div>
         </div>
