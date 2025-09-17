@@ -14,6 +14,11 @@ const projects = [
       { text: 'explanation video', url: 'https://www.youtube.com/watch?v=MriNywwQp-8&t=1s' },
       { text: 'Check on GitHub', url: 'https://github.com/Mehm3tAk1f/sudoku-solver' }
     ],
+    techStack: [
+      { name: 'Python', icon: '🐍', color: 'bg-blue-100 text-blue-800' },
+      { name: 'Tkinter', icon: '🖼️', color: 'bg-green-100 text-green-800' },
+      { name: 'Backtracking', icon: '🧮', color: 'bg-purple-100 text-purple-800' }
+    ],
     delay: 0
   },
   {
@@ -23,6 +28,11 @@ const projects = [
     links: [
       { text: 'Check on GitHub', url: 'https://github.com/Mehm3tAk1f/Library_Project' }
     ],
+    techStack: [
+      { name: 'Python', icon: '🐍', color: 'bg-blue-100 text-blue-800' },
+      { name: 'Tkinter', icon: '🖼️', color: 'bg-green-100 text-green-800' },
+      { name: 'CSV', icon: '📊', color: 'bg-orange-100 text-orange-800' }
+    ],
     delay: 300
   },
   {
@@ -31,6 +41,11 @@ const projects = [
     description: 'This project encrypts the plain text or decrypts the encrypted text by the given key in C.',
     links: [
       { text: 'Check on GitHub', url: '#' }
+    ],
+    techStack: [
+      { name: 'C', icon: '⚡', color: 'bg-gray-100 text-gray-800' },
+      { name: 'Cryptography', icon: '🔐', color: 'bg-red-100 text-red-800' },
+      { name: 'Algorithms', icon: '🧩', color: 'bg-indigo-100 text-indigo-800' }
     ],
     delay: 600
   }
@@ -85,6 +100,7 @@ const Projects = () => {
         title={selectedProject?.title || ''}
         description={selectedProject?.description || ''}
         links={selectedProject?.links || []}
+        techStack={selectedProject?.techStack}
       />
     </>
   )

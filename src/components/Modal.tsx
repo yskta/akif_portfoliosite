@@ -11,9 +11,14 @@ interface ModalProps {
     text: string
     url: string
   }>
+  techStack?: Array<{
+    name: string
+    icon?: string
+    color?: string
+  }>
 }
 
-const Modal = ({ isOpen, onClose, title, description, links }: ModalProps) => {
+const Modal = ({ isOpen, onClose, title, description, links, techStack }: ModalProps) => {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
@@ -52,6 +57,27 @@ const Modal = ({ isOpen, onClose, title, description, links }: ModalProps) => {
         </div>
         
         <p className="text-gray-600 mb-6">{description}</p>
+        
+        {techStack && techStack.length > 0 && (
+          <div className="mb-6">
+            <h3 className="text-sm font-semibold text-gray-700 mb-3">Tech Stack</h3>
+            <div className="flex flex-wrap gap-2">
+              {techStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
+                    tech.color || 'bg-gray-100 text-gray-800'
+                  }`}
+                >
+                  {tech.icon && (
+                    <span className="mr-1.5 text-base">{tech.icon}</span>
+                  )}
+                  {tech.name}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
         
         <div className="flex flex-wrap gap-3">
           {links.map((link, index) => (
