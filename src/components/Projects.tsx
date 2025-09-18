@@ -3,10 +3,11 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Modal from './Modal'
+import { BASE_PATH } from '@/config/constants'
 
 const projects = [
   {
-    icon: '/images/icons8-sudoku-64.png',
+    icon: `${BASE_PATH}/images/icons8-sudoku-64.png`,
     title: 'SUDOKU SOLVER',
     description: 'I created this sudoku solver using a backtracking algorithm in Python and recorded an explanation video.',
     links: [
@@ -21,7 +22,7 @@ const projects = [
     delay: 0
   },
   {
-    icon: '/images/book.png',
+    icon: `${BASE_PATH}/images/book.png`,
     title: 'LIBRARY SYSTEM',
     description: 'I created a Library Management System using Python and Tkinter, featuring book management, search, status checks, and CSV-based data storage.',
     links: [
@@ -35,7 +36,7 @@ const projects = [
     delay: 300
   },
   {
-    icon: '/images/icons8-encryption-68.png',
+    icon: `${BASE_PATH}/images/icons8-encryption-68.png`,
     title: 'TEXT ENCRYPTION',
     description: 'This project encrypts the plain text or decrypts the encrypted text by the given key in C.',
     links: [

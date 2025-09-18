@@ -3,11 +3,12 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Modal from './Modal'
+import { BASE_PATH } from '@/config/constants'
 
 const achievements = [
   {
     title: 'Machine Learning Specialization',
-    image: '/images/Machine Learning.jpg',
+    image: `${BASE_PATH}/images/Machine Learning.jpg`,
     description: 'I studied key machine learning concepts such as linear regression, logistic regression, neural networks, and decision trees. Additionally, I learned about clustering, anomaly detection, recommender systems, and reinforcement learning, gaining practical skills to apply these techniques to real-world problems.',
     fullDescription: 'Through this comprehensive specialization by DeepLearning.AI and Stanford Online, I mastered fundamental machine learning algorithms and gained hands-on experience with real-world applications. The program covered supervised learning (linear/logistic regression, neural networks), unsupervised learning (clustering, dimensionality reduction), and advanced topics like anomaly detection and recommender systems.',
     links: [
@@ -23,7 +24,7 @@ const achievements = [
   },
   {
     title: "CS50's Introduction to Computer Science",
-    image: "/images/HarvardX CS50x CS50's Introduction to Computer Science.jpg",
+    image: `${BASE_PATH}/images/HarvardX CS50x CS50's Introduction to Computer Science.jpg`,
     description: "I studied the fundamentals of computer science through Harvard's CS50x course. This included learning programming languages like C, Python, and SQL, as well as topics such as algorithms, data structures, web development, and cybersecurity. The course also provided hands-on experience in problem-solving and building software projects.",
     fullDescription: "Harvard's CS50x provided a comprehensive introduction to computer science and programming. The course covered low-level programming in C, data structures, algorithms, memory management, web development with Python/Flask, SQL databases, and cybersecurity. I completed challenging problem sets and built multiple projects, gaining a deep understanding of how computers and software work.",
     links: [
@@ -42,7 +43,7 @@ const achievements = [
   },
   {
     title: 'IT Automation with Python Specialization',
-    image: '/images/Google IT Automation with Python.jpg',
+    image: `${BASE_PATH}/images/Google IT Automation with Python.jpg`,
     description: 'I completed a six-course certificate by Google, gaining skills in Python, Git, and IT automation. The curriculum focused on coding in Python for automating IT tasks and systems administration. I learned to use Git and GitHub, troubleshoot and debug problems, and apply automation using configuration management and the Cloud, preparing me for advanced IT support roles.',
     fullDescription: 'This Google certificate program taught me to automate IT tasks at scale using Python. I learned to write Python scripts for system administration, use regular expressions for pattern matching, manage code with Git/GitHub, troubleshoot IT issues systematically, and implement configuration management with Puppet. The program also covered cloud automation and prepared me for roles like IT Specialist or Junior Systems Administrator.',
     links: [

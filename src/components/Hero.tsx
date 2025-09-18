@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { BASE_PATH } from '@/config/constants'
 
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center px-4 lg:px-8">
       <div className="container mx-auto">
         <Image 
-          src="/images/person.jpg" 
+          src={`${BASE_PATH}/images/person.jpg`}
           alt="Mehmet Akif Ufacik" 
           width={150} 
           height={150}

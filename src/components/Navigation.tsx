@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTheme } from '@/contexts/ThemeContext'
+import { BASE_PATH } from '@/config/constants'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -31,7 +32,7 @@ const Navigation = () => {
           <Link href="#" className="flex items-center lg:flex-col lg:mb-8">
             <span className="text-xl font-bold lg:hidden">Mehmet Akif Ufacik</span>
             <Image 
-              src="/images/person.jpg" 
+              src={`${BASE_PATH}/images/person.jpg`}
               alt="Mehmet Akif Ufacik" 
               width={120} 
               height={120}
